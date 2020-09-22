@@ -1,0 +1,1 @@
+g++ -IC:\MinGW\include\SDL2 main.cpp -lSDL2 -lSDL2_image -static-libstdc++
