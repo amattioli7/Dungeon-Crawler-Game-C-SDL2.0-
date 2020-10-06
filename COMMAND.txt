@@ -1,1 +1,5 @@
 g++ -IC:\MinGW\include\SDL2 main.cpp -lSDL2 -lSDL2_image -static-libstdc++
+
+mingw32-make, then add -static-libstdc++ to the end of it if any new files are added
+
+g++ main.cpp Character.cpp Weapon.cpp Player.cpp Archer.cpp Floor.cpp Enemy.cpp -IC:\MinGW\include\SDL2 -LC:\MinGW\lib -w -lmingw32 -lSDL2main -lSDL2    -lSDL2_image -o main -static-libstdc++

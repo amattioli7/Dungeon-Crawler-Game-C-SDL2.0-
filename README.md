@@ -1,4 +1,4 @@
-# Canonical repository for my teams C++/SDL 2.0 Dungeon Crawler game!
+# Canonical repo for our Dungeon Crawler game
 For running on Windows
 1. Install mingw32 (could use 64 but 32 was easier)
     Include MSYS so we have Make as well as gcc
