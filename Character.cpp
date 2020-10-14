@@ -15,7 +15,21 @@ Character::Character(double xcoord, double ycoord, int width, int height) :x_pos
             health = 100;
             flip=SDL_FLIP_NONE;
             spriteIndex=0;
+			
+			//initialize SDL_rects for collision boxes
+			SDL_Rect head = {static_cast<int>(x_pos),static_cast<int>(y_pos),55,80};
+			SDL_Rect torso = {static_cast<int>(x_pos),static_cast<int>(y_pos),55,80};
+			SDL_Rect legs = {static_cast<int>(x_pos),static_cast<int>(y_pos),55,80};
+			SDL_Rect arms = {static_cast<int>(x_pos),static_cast<int>(y_pos),55,80};
+			//push onto collision box vector
+            characterTree = new HitboxTree();
+			characterTree->setRoot(head);
+			characterTree->addChild(torso);
+			characterTree->addChild(legs);
+			characterTree->addChild(arms);
+			
 }
+
 void Character::setSpriteAndDirection(){
     if(x_vel < 0){
         spriteIndex=2;

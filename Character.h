@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <vector>
+#include "HitboxTree.h"
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
@@ -29,6 +30,12 @@ class Character{
         std::vector<SDL_Texture*> sprites; //0 faces forward, 1 faces backward, 2 faces left
         void moveCharacter(); //For enemies this will run the AI, for players this will run the player input routine
             // This should be virtual but I was having problems at compile time with it
+		//player hitbox/collision box 
+		//index 0 = head, 1 = torso, 2 = legs, 3 = arms
+		HitboxTree *characterTree;
+		
+		//check for collision between SDL_Rects
+		//bool checkCollision(SDL_Rect
 };
 
 

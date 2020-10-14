@@ -3,7 +3,6 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-
 // Plan to implement an enemy
 // First, give it the ability to exist
 // How?  Well it has an x and y coord, so in the game loop just make a vector of enemies and push this on it.  Then, check the representation like a player would.
@@ -31,5 +30,7 @@ class Enemy: public Character{
 		bool enemyFlee(double xdest, double ydest, double map_height, double map_width, double timestep);
 		void enemyAccelAway(double x_dir, double y_dir, double timestep);
 		void facePlayer(double x, double y);
+		//decide where the hitbox is depending on sprite in use
+		void updateCollision();
 };
 #endif
